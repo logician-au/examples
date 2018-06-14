@@ -1,12 +1,11 @@
 public class sentenceReverse {
 	
 	public static String reverse(String str) {
+		String[] strArr = str.split(" ");
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0, j = 0; i < str.length(); i++) {
-			if (str.charAt(i) == ' ')
-				sb.insert(j=0, ' ');
-			else
-				sb.insert(j++, str.charAt(i));
+		for (int i = strArr.length-1; i>=0; i--) {
+			String spacer = i == 0 ? "" : " ";
+			sb.append(strArr[i] + spacer);
 		}
 		return sb.toString();
 	}
